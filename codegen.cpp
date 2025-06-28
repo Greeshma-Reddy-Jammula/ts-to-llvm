@@ -96,6 +96,13 @@ int main() {
     }
 
     Builder.CreateRet(ConstantInt::get(Type::getInt32Ty(Context), 0));
-    TheModule->print(outs(), nullptr);
+    // Print to terminal
+TheModule->print(outs(), nullptr);
+
+// Save to file
+std::error_code EC;
+raw_fd_ostream outFile("output.ll", EC, sys::fs::OF_None);
+TheModule->print(outFile, nullptr);
+
     return 0;
 }
