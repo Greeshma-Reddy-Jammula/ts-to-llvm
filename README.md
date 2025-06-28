@@ -29,3 +29,27 @@ How to Run
 
 # Step 2: Run the LLVM code generator
               ./build/ts_to_llvm
+Example File Tree After Running
+
+                  ts-to-llvm/
+                  ├── build/
+                  │   ├── ts_to_llvm      ← compiled executable
+                  │   ├── output.ll       ← LLVM IR file 
+
+How to View the IR
+
+      cat build/output.ll
+or open it in any code editor.
+
+ Sample Output (output.ll)
+llvm
+
+                  ; ModuleID = 'ts-to-llvm'
+                  define i32 @main() {
+                  entry:
+                    %x = alloca i32
+                    store i32 5, i32* %x
+                    ...
+                    call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([5 x i8], [5 x i8]* @str.Even, i32 0, i32 0))
+                    ret i32 0
+                  }
