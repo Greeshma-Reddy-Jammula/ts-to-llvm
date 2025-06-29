@@ -3,22 +3,22 @@
 
 A  compiler that reads a small TypeScript-like language and emits LLVM IR using the LLVM C++ API.
 
-ts-to-llvm/
-├── example.ts✅ fake TS input
-├── parser.js ✅ converts to parsed.json (AST)
-├── parsed.json ✅ used by LLVM C++ backend
-├── codegen.cpp✅ LLVM IR codegen
-├── CMakeLists.txt✅ LLVM build setup
-├── .gitignore ✅ build ignore
-└── README.md✅ usage steps
+     ts-to-llvm/
+     ├── example.ts✅ fake TS input
+     ├── parser.js ✅ converts to parsed.json (AST)
+     ├── parsed.json ✅ used by LLVM C++ backend
+     ├── codegen.cpp✅ LLVM IR codegen
+     ├── CMakeLists.txt✅ LLVM build setup
+     ├── .gitignore ✅ build ignore
+     └── README.md✅ usage steps
 
 NEW Files to Add
 
- ts-to-llvm/
-      ├── addon.cpp 🆕 C++ Node.js addon
-      ├── binding.gyp🆕 node-gyp config
-      ├── index.js🆕 main runner (calls addon + Babel)
-      ├── babel_parser.js🆕 real Babel TypeScript parser
+    ts-to-llvm/
+         ├── addon.cpp 🆕 C++ Node.js addon
+         ├── binding.gyp🆕 node-gyp config
+         ├── index.js🆕 main runner (calls addon + Babel)
+         ├── babel_parser.js🆕 real Babel TypeScript parser
 
 Final Structure
 
