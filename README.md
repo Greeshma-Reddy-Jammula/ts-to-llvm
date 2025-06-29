@@ -4,36 +4,36 @@
 A  compiler that reads a small TypeScript-like language and emits LLVM IR using the LLVM C++ API.
 
 ts-to-llvm/
-├── example.ts              ✅ fake TS input
-├── parser.js               ✅ converts to parsed.json (AST)
-├── parsed.json             ✅ used by LLVM C++ backend
-├── codegen.cpp             ✅ LLVM IR codegen
-├── CMakeLists.txt          ✅ LLVM build setup
-├── .gitignore              ✅ build ignore
-└── README.md               ✅ usage steps
+├── example.ts✅ fake TS input
+├── parser.js ✅ converts to parsed.json (AST)
+├── parsed.json ✅ used by LLVM C++ backend
+├── codegen.cpp✅ LLVM IR codegen
+├── CMakeLists.txt✅ LLVM build setup
+├── .gitignore ✅ build ignore
+└── README.md✅ usage steps
 
 NEW Files to Add
 
  ts-to-llvm/
-      ├── addon.cpp              🆕 C++ Node.js addon
-      ├── binding.gyp            🆕 node-gyp config
-      ├── index.js               🆕 main runner (calls addon + Babel)
-      ├── babel_parser.js        🆕 real Babel TypeScript parser
+      ├── addon.cpp 🆕 C++ Node.js addon
+      ├── binding.gyp🆕 node-gyp config
+      ├── index.js🆕 main runner (calls addon + Babel)
+      ├── babel_parser.js🆕 real Babel TypeScript parser
 
 Final Structure
 
 ts-to-llvm/
-├── example.ts              ✅ input code
-├── babel_parser.js         🆕 Babel-based parser
-├── index.js                🆕 Node runner
-├── addon.cpp               🆕 C++ LLVM backend
-├── binding.gyp             🆕 node-gyp build
-├── codegen.cpp             🟡 optional legacy IR generator
-├── parser.js               ✅ old fake parser
-├── parsed.json             ✅ old AST (now optional)
-├── CMakeLists.txt          ✅ LLVM build (can use in addon too)
-├── .gitignore              ✅ (add `node_modules/` and `build/`)
-└── README.md               ✅ update to show real-time flow
+├── example.ts✅ input code
+├── babel_parser.js🆕 Babel-based parser
+├── index.js🆕 Node runner
+├── addon.cpp🆕 C++ LLVM backend
+├── binding.gyp🆕 node-gyp build
+├── codegen.cpp🟡 optional legacy IR generator
+├── parser.js✅ old fake parser
+├── parsed.json✅ old AST (now optional)
+├── CMakeLists.txt ✅ LLVM build (can use in addon too)
+├── .gitignore✅ (add `node_modules/` and `build/`)
+└── README.md✅ update to show real-time flow
 
 ✅ node-gyp → for real-time compiler using Node.js + addon.cpp
 ✅ cmake → for old, offline version using codegen.cpp
